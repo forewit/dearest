@@ -16,17 +16,17 @@
   }
 </script>
 
-  <form class="container neu-card" on:submit={handleSubmit}>
+  <form class="container" on:submit={handleSubmit}>
     <img class="logo" src="./images/pen.svg" alt="logo" />
     <input
-      class="email"
+      class="email neu-inset"
       bind:value={email}
       type="email"
       placeholder="Email"
       required
     />
     <input
-      class="password"
+      class="password neu-inset"
       bind:value={password}
       type="password"
       placeholder="Password"
@@ -40,10 +40,6 @@
 
 <style>
   .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 305px;
     padding: 20px 24px;
     font-size: 14px;
@@ -106,7 +102,7 @@
   .btn {
     margin: 2px 0;
     padding: 0 18px;
-    background-color: #00a1a7; /* Google blue */
+    background: #00a1a7;
     color: #fff;
     border: none;
     border-radius: 16px;
