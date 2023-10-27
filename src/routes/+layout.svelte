@@ -4,7 +4,10 @@
   import { doc, getDoc, setDoc } from "firebase/firestore";
   import { auth, db } from "$lib/firebase/firebase.client";
 
-  import './styles.css';
+  import "./styles.css";
+  import { fade } from "svelte/transition";
+
+  export let data;
 
   let notchLeft = 0,
     notchRight = 0,
@@ -38,7 +41,7 @@
       // get firestore document data
       const docRef = doc(db, "users", user.uid);
       const docSnap = await getDoc(docRef);
-      let dataToSetStoreTo: UserData = {text:""};
+      let dataToSetStoreTo: UserData = { text: "" };
 
       // create a new user doc if it doesn't exist
       if (!docSnap.exists()) {
@@ -76,7 +79,11 @@
   style="--notch-left: {notchLeft}; --notch-right: {notchRight}; --notch-top: {notchTop};"
 >
   <div class="content">
-    <slot />
+    {#key data.url}
+    <div in:fade={{duration:300,delay:300}} out:fade={{duration:300}}>
+      <slot />
+    </div>
+    {/key}
   </div>
 </div>
 
@@ -101,6 +108,4 @@
     width: 100%;
     height: 100%;
   }
-
-  
 </style>

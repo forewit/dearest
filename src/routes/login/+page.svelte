@@ -8,9 +8,7 @@
     type UserData,
   } from "../../stores/authStore";
   import type { User } from "firebase/auth";
-  import { fade } from "svelte/transition";
-  import { cubicInOut } from "svelte/easing";
-  import { afterNavigate, beforeNavigate } from "$app/navigation";
+  import { afterNavigate } from "$app/navigation";
 
   let user: User;
   let data: UserData;
@@ -70,13 +68,13 @@
   <p>{data.text}</p>
 {:else}
 
-<div class="auth neu neu-animated-rise">
+<div class="auth-container neu neu-animated-rise">
   <Auth />
 </div>
 {/if}
 
 <style>
-  .auth {
+  .auth-container {
     width: min-content;
   }
 </style>
