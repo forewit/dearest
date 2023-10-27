@@ -43,6 +43,7 @@
       if (curr.data) data = curr.data;
     });
   </script>
+  <div></div>
   
   {#if $authStore.currentUser}
     <div>Current User: {user.email}</div>
