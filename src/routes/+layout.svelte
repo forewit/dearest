@@ -80,9 +80,9 @@
 >
   <div class="content">
     {#key data.url}
-    <div in:fade={{duration:300,delay:300}} out:fade={{duration:300}}>
-      <slot />
-    </div>
+      <div  out:fade={{ duration: 400 }} in:fade={{ duration: 400, delay: 400 }}>
+        <slot />
+      </div>
     {/key}
   </div>
 </div>

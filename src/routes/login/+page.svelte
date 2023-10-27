@@ -76,5 +76,9 @@
 <style>
   .auth-container {
     width: min-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
   }
 </style>
