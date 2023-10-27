@@ -16,7 +16,7 @@
   }
 </script>
 
-  <form class="container" on:submit={handleSubmit}>
+  <form class="container neu-card" on:submit={handleSubmit}>
     <img class="logo" src="./images/pen.svg" alt="logo" />
     <input
       class="email"
@@ -45,10 +45,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 305px;
-    background-color: #fff;
     padding: 20px 24px;
-    border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
     font-size: 14px;
 
     display: grid;
@@ -81,7 +78,7 @@
     align-self: center;
     justify-self: left;
     border: 1px solid red;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 5px 6px;
   }
 
@@ -89,15 +86,16 @@
   .email {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: none;
+    border-radius: 14px;
     outline: none;
+    background-color: #fdfdfd;
   }
 
   .password:focus,
   .email:focus {
     border: 2px solid #00a1a7;
-    padding: 9px;
+    padding: 8px;
   }
 
   .password::placeholder,
@@ -111,7 +109,7 @@
     background-color: #00a1a7; /* Google blue */
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 16px;
     cursor: pointer;
     justify-self: right;
     grid-area: btn;

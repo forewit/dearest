@@ -102,26 +102,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-
-    /* temporary */
-    background: aliceblue;
   }
 
-  /* Import the Ysabeau font */
-  @font-face {
-    font-family: "Poltawski Nowy";
-    src: url("/fonts/PoltawskiNowy.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  :global(*) {
-    box-sizing: border-box;
-    font-family: "Poltawski Nowy";
-    margin: 0;
-    padding: 0;
-  }
-  :global(html, body) {
-    background: lightskyblue;
-  }
+  
 </style>
