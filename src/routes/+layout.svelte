@@ -3,6 +3,7 @@
   import { authStore, type UserData } from "../stores/authStore";
   import { doc, getDoc, setDoc } from "firebase/firestore";
   import { auth, db } from "$lib/firebase/firebase.client";
+  import GlobalCss from "$lib/Components/GlobalCSS.svelte";
 
 
   let notchLeft = 0,
@@ -69,6 +70,8 @@
     content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
   />
 </svelte:head>
+
+<GlobalCss/>
 
 <div
   class="container"
