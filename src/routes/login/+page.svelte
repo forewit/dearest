@@ -9,6 +9,7 @@
   } from "../../stores/authStore";
   import type { User } from "firebase/auth";
   import { afterNavigate } from "$app/navigation";
+  import Selector from "$lib/Components/Selector.svelte";
 
   let user: User;
   let data: UserData;
@@ -45,10 +46,10 @@
     if (curr.data) data = curr.data;
   });
 
-  afterNavigate(()=>{
-    console.log("after navigate")
+  afterNavigate(() => {
+    console.log("after navigate");
     ready = true;
-  })
+  });
 </script>
 
 <div />
@@ -66,11 +67,12 @@
   </form>
 
   <p>{data.text}</p>
-{:else}
 
-<div class="auth-container neu neu-animated-rise">
-  <Auth />
-</div>
+  <Selector logos={["./images/logo.svg", "./images/logo.svg", "./images/logo.svg"]} />
+{:else}
+  <div class="auth-container neu neu-animated-rise">
+    <Auth />
+  </div>
 {/if}
 
 <style>
