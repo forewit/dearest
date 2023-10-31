@@ -1,11 +1,21 @@
 <script lang="ts">
   export let logos: string[] = [];
+
+  let activeSlot = 0;
 </script>
 
 <div class="wrapper">
-  <div class="handle" />
-  {#each logos as url}
-    <div class="slot">
+  {#each logos as url, i}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div
+      class="slot neu"
+      class:neu-animated-fall={activeSlot != i}
+      class:neu-animated-rise={activeSlot == i}
+      on:click={() => {
+        activeSlot = i;
+      }}
+    >
       <img src={url} alt="" />
     </div>
   {/each}
@@ -13,7 +23,6 @@
 
 <style>
   .wrapper {
-    background-color: lightcoral;
     display: grid;
     grid-auto-flow: row;
     width: min-content;
@@ -23,23 +32,15 @@
   .slot {
     width: 100px;
     height: 100px;
-    background-color: lightblue;
+    padding: 12px;
     border-radius: 50%;
     cursor: pointer;
     user-select: none;
-  }
-  .slot:active {
-    background-color: aquamarine;
+    animation-duration: 200ms;
   }
   .slot img {
     width: 100%;
     height: 100%;
-  }
-  .handle {
-    position: absolute;
-    cursor: pointer;
-    width: 50%;
-    aspect-ratio: 1;
-    background-color: aqua;
+    pointer-events: none;
   }
 </style>

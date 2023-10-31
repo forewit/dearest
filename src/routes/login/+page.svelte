@@ -82,5 +82,6 @@
     left: 50%;
     top: 50%;
     translate: -50% -50%;
+    animation-delay: 1.5s;
   }
 </style>

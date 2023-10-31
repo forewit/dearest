@@ -23,28 +23,34 @@ body {
   background: var(--neu-color);
 }
 
+
 .neu {
   border-radius: 40px;
   background-color: var(--neu-color);
-  box-shadow: 5px 5px 20px var(--neu-shadow-color),
-    -5px -5px 20px var(--neu-highlight-color);
+  box-shadow: 3px 3px 10px var(--neu-shadow-color),
+    -3px -3px 10px var(--neu-highlight-color);
+}
+
+.neu-invert {
+  box-shadow: inset 3px 3px 10px var(--neu-shadow-color),
+              inset -3px -3px 10px var(--neu-highlight-color);
 }
 
 .neu-animated-rise {
   scale: 0.9;
   box-shadow: none;
-  animation: neu-rise-animation 1s ease-in-out 1.5s forwards;
+  animation: neu-rise-animation 800ms ease-in-out forwards;
 }
 @keyframes neu-rise-animation {
   100% {
     scale: 1;
-    box-shadow: 5px 5px 20px var(--neu-shadow-color),
-      -5px -5px 20px var(--neu-highlight-color);
+    box-shadow: 3px 3px 10px var(--neu-shadow-color),
+    -3px -3px 10px var(--neu-highlight-color);
   }
 }
 
 .neu-animated-fall {
-  animation: neu-fall-animation 1s ease-in-out 1.5s forwards;
+  animation: neu-fall-animation 800ms ease-in-out forwards;
 }
 @keyframes neu-fall-animation {
   100% {
