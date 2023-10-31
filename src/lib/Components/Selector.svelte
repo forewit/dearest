@@ -1,19 +1,25 @@
 <script lang="ts">
-  export let logos: string[] = [];
+  export let images: string[] = [];
+  export let multiselect = false;
 
-  let activeSlot = 0;
+  let selectedSlots:boolean[] = [];
 </script>
 
 <div class="wrapper">
-  {#each logos as url, i}
+  {#each images as url, i}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div
-      class="slot neu"
-      class:neu-animated-fall={activeSlot != i}
-      class:neu-animated-rise={activeSlot == i}
+      class="slot neu neu-low"
+      class:neu-animated-fall={!selectedSlots[i]}
+      class:neu-animated-rise={selectedSlots[i]}
       on:click={() => {
-        activeSlot = i;
+        if (multiselect) {
+        selectedSlots[i] = !selectedSlots[i];
+        } else {
+          selectedSlots = [];
+          selectedSlots[i] = true;
+        }
       }}
     >
       <img src={url} alt="" />

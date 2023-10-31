@@ -67,21 +67,4 @@
   </form>
 
   <p>{data.text}</p>
-
-  <Selector logos={["./images/logo.svg", "./images/logo.svg", "./images/logo.svg"]} />
-{:else}
-  <div class="auth-container neu neu-animated-rise">
-    <Auth />
-  </div>
 {/if}
-
-<style>
-  .auth-container {
-    width: min-content;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    translate: -50% -50%;
-    animation-delay: 1.5s;
-  }
-</style>

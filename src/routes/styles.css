@@ -23,6 +23,12 @@ body {
   background: var(--neu-color);
 }
 
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
 
 .neu {
   border-radius: 40px;
