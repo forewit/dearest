@@ -3,8 +3,7 @@
   --background-color: #c5ebec;
   --shadow-color: #a7c8c9;
   --highlight-color: #e3ffff;
-  --accent-color: #00d7df;
-  --dark-accent-color: #00a1a7;
+  --accent-color: #00a1a7;
 
   /* neumorphic shadows */
   --dropShadow: 3px 3px 10px var(--shadow-color),
@@ -75,9 +74,6 @@ body {
   box-shadow: var(--insetShadow);
   border-color: transparent;
 }
-.button img {
-  height: 100%;
-}
 
 .input {
   color: var(--text-color);
@@ -98,6 +94,16 @@ body {
 .input:focus {
   box-shadow: none;
   border-color: var(--highlight-color);
+}
+
+.card {
+  border-radius: var(--radius);
+  padding: 20px;
+  scale: 0.9;
+  transition: var(--transition);
+}
+.card:active, .card:hover {
+  scale: 1;
 }
 
 /* 

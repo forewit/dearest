@@ -10,7 +10,11 @@
 </svelte:head>
 
 {#if $authStore.isLoading}
-  <div class="center" in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration: 300 }}>
+  <div
+    in:fade={{ duration: 300, delay: 300 }}
+    out:fade={{ duration: 300 }}
+    class="center"
+  >
     <Spinner />
   </div>
 {:else if !$authStore.currentUser}
@@ -22,8 +26,14 @@
     <Auth />
   </div>
 {:else}
-  <h1 class="center">logged in</h1>
-  <a href="/energy">energy</a>
+  <div
+    in:fade={{ duration: 300, delay: 300 }}
+    out:fade={{ duration: 300 }}
+    class="center"
+  >
+    <h1>logged in</h1>
+    <a href="/energy">energy</a>
+  </div>
 {/if}
 
 <style>

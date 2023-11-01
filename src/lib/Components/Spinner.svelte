@@ -3,7 +3,7 @@
 <style>
 
     .loader {
-  color: #fff;
+  color: var(--accent-color);
   font-size: 10px;
   width: 1em;
   height: 1em;

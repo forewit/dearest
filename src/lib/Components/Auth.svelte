@@ -19,25 +19,21 @@
 
 <form class="container">
   <img class="logo" src="./images/pen.svg" alt="logo" />
-  <input
-    class="email input"
-    bind:value={email}
-    type="email"
-    placeholder=" "
-    required
-  />
-  <input
-    class="password input"
-    bind:value={password}
-    type="password"
-    placeholder=" "
-    required
-  />
+  <div class="email">
+    <input class="email input" bind:value={email} type="email" required />
+    <div class="email-logo" />
+  </div>
+
+  <div class="password">
+    <input class="input" bind:value={password} type="password" required />
+    <div class="password-logo" />
+  </div>
+
   {#if failedLogin}
     <p transition:fade={{ duration: 150 }} class="error">Failed to login!</p>
   {/if}
   <button class="button login" on:click={handleSubmit}>
-    <img src="/images/login.svg" alt="login" />
+    <div class="login-logo" />
   </button>
 </form>
 
@@ -67,35 +63,38 @@
 
   .email {
     grid-area: email;
-    background-image: url("images/email.svg");
+    position: relative;
   }
-
   .password {
     grid-area: pass;
-    background-image: url("images/password.svg");
+    position: relative;
   }
-
-  .email {
-    grid-area: email;
+  .email input,
+  .password input {
     width: 100%;
-    padding-left: 40px;
-
-    background-image: url("images/email.svg");
-    background-size: 20px;
-    background-position: 10px 50%;
-    background-repeat: no-repeat;
+    padding-left: 44px;
+  }
+  .email-logo,
+  .password-logo {
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    left: 18px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+  }
+  .email-logo {
+    -webkit-mask: url("images/email.svg") no-repeat center / contain;
+    mask: url("images/email.svg") no-repeat center / contain;
+    background-color: var(--accent-color);
+  }
+  .password-logo {
+    -webkit-mask: url("images/password.svg") no-repeat center / contain;
+    mask: url("images/password.svg") no-repeat center / contain;
+    background-color: var(--accent-color);
   }
 
-  .password {
-    grid-area: pass;
-    width: 100%;
-    padding-left: 40px;
-
-    background-image: url("images/password.svg");
-    background-size: 20px;
-    background-position: 10px 50%;
-    background-repeat: no-repeat;
-  }
   .error {
     grid-area: error;
     color: red;
@@ -110,5 +109,12 @@
     justify-self: left;
     grid-area: login;
     margin: 3px 8px;
+  }
+  .login-logo {
+    height: 100%;
+    aspect-ratio: 1;
+    -webkit-mask: url("images/login.svg") no-repeat center / contain;
+    mask: url("images/login.svg") no-repeat center / contain;
+    background-color: var(--accent-color);
   }
 </style>

@@ -87,7 +87,7 @@
     {#if $authStore.currentUser}
       <a href="/" transition:fade={{ duration: 300 }}>
         <button class="logout-btn button" on:click={authHandlers.logout}>
-          <img src="/images/logout.svg" alt="logout">
+          <div class="logout-logo" />
         </button>
       </a>
     {/if}
@@ -121,5 +121,12 @@
     bottom: 0;
     left: 0;
     margin: 20px;
+  }
+  .logout-logo {
+    height: 100%;
+    aspect-ratio: 1;
+    -webkit-mask: url("images/logout.svg") no-repeat center / contain;
+    mask: url("images/logout.svg") no-repeat center / contain;
+    background-color: var(--accent-color);
   }
 </style>
