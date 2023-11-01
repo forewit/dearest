@@ -61,8 +61,8 @@
     pointer-events: none;
     grid-area: logo;
 
-    -webkit-mask: url("images/heart.svg") no-repeat center / contain;
-    mask: url("images/heart.svg") no-repeat center / contain;
+    -webkit-mask: url("/images/heart.svg") no-repeat center / contain;
+    mask: url("/images/heart.svg") no-repeat center / contain;
     background-color: var(--accent-color);
   }
 
@@ -108,13 +108,13 @@
     height: 20px;
   }
   .email-logo {
-    -webkit-mask: url("images/email.svg") no-repeat center / contain;
-    mask: url("images/email.svg") no-repeat center / contain;
+    -webkit-mask: url("/images/email.svg") no-repeat center / contain;
+    mask: url("/images/email.svg") no-repeat center / contain;
     background-color: var(--accent-color);
   }
   .password-logo {
-    -webkit-mask: url("images/password.svg") no-repeat center / contain;
-    mask: url("images/password.svg") no-repeat center / contain;
+    -webkit-mask: url("/images/password.svg") no-repeat center / contain;
+    mask: url("/images/password.svg") no-repeat center / contain;
     background-color: var(--accent-color);
   }
 
@@ -136,8 +136,8 @@
   .login-logo {
     height: 100%;
     aspect-ratio: 1;
-    -webkit-mask: url("images/login.svg") no-repeat center / contain;
-    mask: url("images/login.svg") no-repeat center / contain;
+    -webkit-mask: url("/images/login.svg") no-repeat center / contain;
+    mask: url("/images/login.svg") no-repeat center / contain;
     background-color: var(--accent-color);
   }
 </style>

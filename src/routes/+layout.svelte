@@ -125,8 +125,8 @@
   .logout-logo {
     height: 100%;
     aspect-ratio: 1;
-    -webkit-mask: url("images/logout.svg") no-repeat center / contain;
-    mask: url("images/logout.svg") no-repeat center / contain;
+    -webkit-mask: url("/images/logout.svg") no-repeat center / contain;
+    mask: url("/images/logout.svg") no-repeat center / contain;
     background-color: var(--accent-color);
   }
 </style>
