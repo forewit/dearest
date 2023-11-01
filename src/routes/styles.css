@@ -37,9 +37,15 @@ body {
     -3px -3px 10px var(--neu-highlight-color);
 }
 
-.neu-invert {
+.neu-inset {
   box-shadow: inset 3px 3px 10px var(--neu-shadow-color),
-              inset -3px -3px 10px var(--neu-highlight-color);
+    inset -3px -3px 10px var(--neu-highlight-color);
+}
+
+.neu-input {
+  background-color: #e0e0e0;
+  box-shadow: inset 2px 2px 5px #bebebe,
+    inset -2px -2px 5px #fff;
 }
 
 .neu-animated-rise {
@@ -51,7 +57,7 @@ body {
   100% {
     scale: 1;
     box-shadow: 3px 3px 10px var(--neu-shadow-color),
-    -3px -3px 10px var(--neu-highlight-color);
+      -3px -3px 10px var(--neu-highlight-color);
   }
 }
 

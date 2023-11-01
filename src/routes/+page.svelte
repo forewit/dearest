@@ -2,8 +2,7 @@
   import Auth from "$lib/Components/Auth.svelte";
   import { fade } from "svelte/transition";
   import { authHandlers, authStore } from "../stores/authStore";
-  import { onDestroy } from "svelte";
-  import Selector from "$lib/Components/Selector.svelte";
+  import Spinner from "$lib/Components/Spinner.svelte";
 </script>
 
 <svelte:head>
@@ -11,8 +10,8 @@
 </svelte:head>
 
 {#if $authStore.isLoading}
-  <div in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration: 300 }}>
-    <h1>loading</h1>
+  <div class="centered" in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration: 300 }}>
+    <Spinner />
   </div>
 {:else if !$authStore.currentUser}
   <div
@@ -24,10 +23,8 @@
   </div>
 {:else}
   <div in:fade={{ duration: 300, delay: 300 }} out:fade={{ duration: 300 }}>
-    <div class="selector-container">
-      <Selector multiselect={true} images={["/images/logo.svg", "/images/logo.svg"]}/>
-    </div>
-    <button class="logout-btn" on:click={authHandlers.logout}>Logout</button>
+
+    <button class="logout-btn neu" on:click={authHandlers.logout}>Logout</button>
   </div>
 {/if}
 
@@ -36,15 +33,12 @@
     width: min-content;
     animation-delay: 1s;
   }
-  .selector-container {
-    position: absolute;
-    left: 50%;
-    top: 20%;
-    transform: translateX(-50%);
-  }
   .logout-btn {
     position: absolute;
-    bottom: 5px;
-    left: 5px;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    margin: 20px;;
+    border: none;
   }
 </style>

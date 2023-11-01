@@ -19,14 +19,14 @@
   <form class="container" on:submit={handleSubmit}>
     <img class="logo" src="./images/pen.svg" alt="logo" />
     <input
-      class="email neu-inset"
+      class="email neu-input"
       bind:value={email}
       type="email"
       placeholder="Email"
       required
     />
     <input
-      class="password neu-inset"
+      class="password neu-input"
       bind:value={password}
       type="password"
       placeholder="Password"
