@@ -18,7 +18,7 @@
 </script>
 
 <form class="container">
-  <img class="logo" src="./images/pen.svg" alt="logo" />
+  <div class="heart-logo" />
   <div class="email">
     <input class="email input" bind:value={email} type="email" required />
     <div class="email-logo" />
@@ -39,7 +39,7 @@
 
 <style>
   .container {
-    width: 300px;
+    width: 400px;
     padding: 20px 24px;
     font-size: 14px;
 
@@ -53,12 +53,17 @@
       "logo login error";
   }
 
-  .logo {
+  .heart-logo {
     height: 120px;
-    padding-right: 16px;
+    margin-right: 20px;
+    aspect-ratio: 1;
     align-self: center;
     pointer-events: none;
     grid-area: logo;
+
+    -webkit-mask: url("images/heart.svg") no-repeat center / contain;
+    mask: url("images/heart.svg") no-repeat center / contain;
+    background-color: var(--accent-color);
   }
 
   .email {
