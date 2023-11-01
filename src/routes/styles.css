@@ -99,11 +99,8 @@ body {
 .card {
   border-radius: var(--radius);
   padding: 20px;
-  scale: 0.9;
   transition: var(--transition);
-}
-.card:active, .card:hover {
-  scale: 1;
+  box-shadow: var(--dropShadow);
 }
 
 /* 

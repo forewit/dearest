@@ -21,7 +21,7 @@
   <div
     in:fade={{ duration: 300, delay: 300 }}
     out:fade={{ duration: 300 }}
-    class="auth-container neu center"
+    class="auth-container center"
   >
     <Auth />
   </div>
