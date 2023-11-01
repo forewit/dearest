@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
   import { authHandlers } from "../../stores/authStore";
 
   let email = "";
@@ -16,31 +17,33 @@
   }
 </script>
 
-  <form class="container" on:submit={handleSubmit}>
-    <img class="logo" src="./images/pen.svg" alt="logo" />
-    <input
-      class="email neu-input"
-      bind:value={email}
-      type="email"
-      placeholder="Email"
-      required
-    />
-    <input
-      class="password neu-input"
-      bind:value={password}
-      type="password"
-      placeholder="Password"
-      required
-    />
-    {#if failedLogin}
-      <p class="error">Failed to login!</p>
-    {/if}
-    <input type="submit" value="Login" class="btn" />
-  </form>
+<form class="container">
+  <img class="logo" src="./images/pen.svg" alt="logo" />
+  <input
+    class="email input"
+    bind:value={email}
+    type="email"
+    placeholder=" "
+    required
+  />
+  <input
+    class="password input"
+    bind:value={password}
+    type="password"
+    placeholder=" "
+    required
+  />
+  {#if failedLogin}
+    <p transition:fade={{ duration: 150 }} class="error">Failed to login!</p>
+  {/if}
+  <button class="button login" on:click={handleSubmit}>
+    <img src="/images/login.svg" alt="login" />
+  </button>
+</form>
 
 <style>
   .container {
-    width: 305px;
+    width: 300px;
     padding: 20px 24px;
     font-size: 14px;
 
@@ -51,7 +54,7 @@
     grid-template-areas:
       "logo email email"
       "logo pass pass"
-      "logo error btn";
+      "logo login error";
   }
 
   .logo {
@@ -61,57 +64,51 @@
     pointer-events: none;
     grid-area: logo;
   }
+
   .email {
     grid-area: email;
+    background-image: url("images/email.svg");
   }
+
   .password {
     grid-area: pass;
+    background-image: url("images/password.svg");
+  }
+
+  .email {
+    grid-area: email;
+    width: 100%;
+    padding-left: 40px;
+
+    background-image: url("images/email.svg");
+    background-size: 20px;
+    background-position: 10px 50%;
+    background-repeat: no-repeat;
+  }
+
+  .password {
+    grid-area: pass;
+    width: 100%;
+    padding-left: 40px;
+
+    background-image: url("images/password.svg");
+    background-size: 20px;
+    background-position: 10px 50%;
+    background-repeat: no-repeat;
   }
   .error {
     grid-area: error;
     color: red;
     font-size: 12px;
     align-self: center;
-    justify-self: left;
-    border: 1px solid red;
     border-radius: 8px;
-    padding: 5px 6px;
+    padding: 5px 10px;
+    margin-top: 3px;
   }
 
-  .password,
-  .email {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 14px;
-    outline: none;
-    background-color: #fdfdfd;
-  }
-
-  .password:focus,
-  .email:focus {
-    border: 2px solid #00a1a7;
-    padding: 8px;
-  }
-
-  .password::placeholder,
-  .email::placeholder {
-    color: #ccc;
-  }
-
-  .btn {
-    margin: 2px 0;
-    padding: 0 18px;
-    background: #00a1a7;
-    color: #fff;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    justify-self: right;
-    grid-area: btn;
-  }
-
-  .btn:hover {
-    background-color: #006f74; /* Darker blue for hover */
+  .login {
+    justify-self: left;
+    grid-area: login;
+    margin: 3px 8px;
   }
 </style>

@@ -1,38 +1,109 @@
 :root {
-  /* see:  https://neumorphism.io/ */
-  --neu-color: #c5ebec;
-  --neu-shadow-color: #a7c8c9;
-  --neu-highlight-color: #e3ffff;
+  /* colors generated from:  https://neumorphism.io/ */
+  --background-color: #c5ebec;
+  --shadow-color: #a7c8c9;
+  --highlight-color: #e3ffff;
+  --accent-color: #00d7df;
+  --dark-accent-color: #00a1a7;
+
+  /* neumorphic shadows */
+  --dropShadow: 3px 3px 10px var(--shadow-color),
+    -3px -3px 10px var(--highlight-color);
+  --insetShadow: inset 3px 3px 10px var(--shadow-color),
+    inset -3px -3px 10px var(--highlight-color);
+
+  /* font */
+  --font-family: "PoltawskiNowy";
+  --font-size: 14px;
+  --line-height: 14px;
+  --text-color: #6c7587;
+
+  /* other */
+  --height: 40px;
+  --radius: 20px;
+  --transition: all 150ms ease-in-out;
 }
 
 @font-face {
-  font-family: "Poltawski Nowy";
-  src: url("/fonts/PoltawskiNowy.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "PoltawskiNowy";
   font-style: normal;
+  src: url("/fonts/PoltawskiNowy.ttf") format("truetype");
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  font-family: "Poltawski Nowy";
   margin: 0;
   padding: 0;
+  font-family: var(--font-family);
 }
 html,
 body {
-  background: var(--neu-color);
+  background: var(--background-color);
 }
 
-.centered {
+.center {
   position: absolute;
   left: 50%;
   top: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
 }
 
+.button {
+  color: var(--text-color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+
+  height: var(--height);
+  padding: 8px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  user-select: none;
+
+  border: 3px solid transparent;
+  outline: none;
+  background-color: var(--background-color);
+  box-shadow: var(--dropShadow);
+  transition: var(--transition);
+}
+.button:hover {
+  box-shadow: none;
+  border-color: var(--highlight-color);
+}
+.button:active {
+  box-shadow: var(--insetShadow);
+  border-color: transparent;
+}
+.button img {
+  height: 100%;
+}
+
+.input {
+  color: var(--text-color);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+
+  height: var(--height);
+  padding: 8px;
+  border-radius: var(--radius);
+
+  border: 3px solid transparent;
+  outline: none;
+  background-color: var(--background-color);
+  box-shadow: var(--insetShadow);
+  transition: var(--transition);
+}
+.input:hover,
+.input:focus {
+  box-shadow: none;
+  border-color: var(--highlight-color);
+}
+
+/* 
 .neu {
   border-radius: 40px;
-  background-color: var(--neu-color);
+  background-color: var(--neu-background-color);
   box-shadow: 3px 3px 10px var(--neu-shadow-color),
     -3px -3px 10px var(--neu-highlight-color);
 }
@@ -44,8 +115,7 @@ body {
 
 .neu-input {
   background-color: #e0e0e0;
-  box-shadow: inset 2px 2px 5px #bebebe,
-    inset -2px -2px 5px #fff;
+  box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #fff;
 }
 
 .neu-animated-rise {
@@ -69,4 +139,4 @@ body {
     scale: 0.9;
     box-shadow: none;
   }
-}
+} */

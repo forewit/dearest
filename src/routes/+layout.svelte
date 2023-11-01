@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { authStore, type UserData } from "../stores/authStore";
+  import { authStore, authHandlers, type UserData } from "../stores/authStore";
   import { doc, getDoc, setDoc } from "firebase/firestore";
   import { auth, db } from "$lib/firebase/firebase.client";
 
@@ -80,10 +80,17 @@
 >
   <div class="content">
     {#key data.url}
-      <div  out:fade={{ duration: 300 }} in:fade={{ duration: 300, delay: 300 }}>
+      <div out:fade={{ duration: 300 }} in:fade={{ duration: 300, delay: 300 }}>
         <slot />
       </div>
     {/key}
+    {#if $authStore.currentUser}
+      <a href="/" transition:fade={{ duration: 300 }}>
+        <button class="logout-btn button" on:click={authHandlers.logout}>
+          <img src="/images/logout.svg" alt="logout">
+        </button>
+      </a>
+    {/if}
   </div>
 </div>
 
@@ -107,5 +114,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
+  }
+
+  .logout-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
   }
 </style>
