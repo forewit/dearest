@@ -66,6 +66,24 @@
     background-color: var(--accent-color);
   }
 
+  @media only screen and (max-width: 480px) {
+    .container {
+      width: 280px;
+      max-width: 95vw;
+      grid-template-columns: max-content 1fr;
+    grid-template-rows: min-content 40px 40px 40px;
+      grid-template-areas: 
+      "logo logo"
+      "email email"
+      "pass pass"
+      "login error";
+    }
+    .heart-logo {
+      justify-self: center;
+      margin-right: 0px;
+    }
+  }
+
   .email {
     grid-area: email;
     position: relative;
