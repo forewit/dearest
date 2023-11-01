@@ -4,6 +4,14 @@
   --shadow-color: #a7c8c9;
   --highlight-color: #e3ffff;
   --accent-color: #00a1a7;
+  --text-color: #6c7587;
+
+  /* ALTERNATE COLORS 
+  --background-color: #d24646;
+  --shadow-color: #b33c3c;
+  --highlight-color: #f25151;
+  --accent-color: #731616;
+  --text-color: #731616; */
 
   /* neumorphic shadows */
   --dropShadow: 3px 3px 10px var(--shadow-color),
@@ -15,7 +23,6 @@
   --font-family: "PoltawskiNowy";
   --font-size: 14px;
   --line-height: 14px;
-  --text-color: #6c7587;
 
   /* other */
   --height: 40px;
