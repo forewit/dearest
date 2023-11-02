@@ -6,12 +6,12 @@
   --accent-color: #00a1a7;
   --text-color: #6c7587;
 
-  /* ALTERNATE COLORS 
-  --background-color: #d24646;
+  /* ALTERNATE COLORS */
+  /*--background-color: #d24646;
   --shadow-color: #b33c3c;
   --highlight-color: #f25151;
   --accent-color: #731616;
-  --text-color: #731616; */
+  --text-color: #4f0f0f;*/
 
   /* neumorphic shadows */
   --dropShadow: 3px 3px 10px var(--shadow-color),
@@ -26,8 +26,8 @@
 
   /* other */
   --height: 50px;
-  --radius: 25px;
-  --spacing: 16px;
+  --radius: 25px; 
+  --spacing: 10px;
   --transition: all 150ms ease-in-out;
 }
 

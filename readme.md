@@ -3,6 +3,7 @@
 
 icons: 
 * https://www.svgrepo.com/collection/solar-bold-duotone-icons/
+* https://www.svgrepo.com/collection/adwaita-tiny-circular-icons/
 * https://www.svgrepo.com/collection/web-design-22/
 
 colors: #00a1a7

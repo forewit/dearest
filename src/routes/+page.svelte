@@ -34,7 +34,9 @@
     out:fade={{ duration: 300 }}
     class="center"
   >
-    <h2>Failed to redirect</h2>
+  <a href="/energy">
+    <h2>Energy</h2>
+  </a>
   </div>
 {/if}
 

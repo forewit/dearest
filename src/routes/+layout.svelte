@@ -85,7 +85,11 @@
       </div>
     {/key}
     {#if $authStore.currentUser}
-      <a href="/" transition:fade={{ duration: 300 }}>
+      <a
+        href="/"
+        in:fade={{ duration: 300, delay: 300 }}
+        out:fade={{ duration: 300 }}
+      >
         <button class="logout-btn button" on:click={authHandlers.logout}>
           <div class="logout-logo" />
         </button>

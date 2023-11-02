@@ -49,7 +49,7 @@
 
     display: grid;
     grid-template-columns: min-content max-content 1fr;
-    grid-template-rows: 40px 40px 40px;
+    grid-template-rows: var(--height) var(--height) var(--height);
     row-gap: var(--spacing);
     grid-template-areas:
       "logo email email"
@@ -59,8 +59,8 @@
 
   .heart-logo {
     height: calc(var(--height)*2);
-    margin-right: 20px;
     aspect-ratio: 1;
+    margin-right: var(--spacing);
     align-self: center;
     pointer-events: none;
     grid-area: logo;
@@ -75,7 +75,7 @@
       width: 300px;
       max-width: 95vw;
       grid-template-columns: max-content 1fr;
-      grid-template-rows: min-content 40px 40px 40px;
+      grid-template-rows: min-content var(--height) var(--height) var(--height);
       grid-template-areas:
         "logo logo"
         "email email"
@@ -138,7 +138,6 @@
   }
 
   .login {
-    justify-self: left;
     grid-area: login;
     margin: 3px 8px;
   }
