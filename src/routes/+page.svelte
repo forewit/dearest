@@ -1,8 +1,11 @@
 <script lang="ts">
   import Auth from "$lib/Components/Auth.svelte";
   import { fade } from "svelte/transition";
-  import { authHandlers, authStore } from "../stores/authStore";
+  import { authStore } from "../stores/authStore";
   import Spinner from "$lib/Components/Spinner.svelte";
+
+
+
 </script>
 
 <svelte:head>
@@ -23,7 +26,7 @@
     out:fade={{ duration: 300 }}
     class="auth-container center"
   >
-    <Auth />
+    <Auth redirect="/energy"/>
   </div>
 {:else}
   <div
@@ -31,8 +34,7 @@
     out:fade={{ duration: 300 }}
     class="center"
   >
-    <h1>logged in</h1>
-    <a href="/energy">energy</a>
+    <h2>Failed to redirect</h2>
   </div>
 {/if}
 

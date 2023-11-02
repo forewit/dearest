@@ -1,6 +1,9 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { authHandlers } from "../../stores/authStore";
+  import { goto } from "$app/navigation";
+
+  export let redirect = "";
 
   let email = "";
   let password = "";
@@ -10,6 +13,7 @@
     try {
       failedLogin = false;
       await authHandlers.login(email, password);
+      if (redirect) goto(redirect);
     } catch (err) {
       console.log("Login failed!");
       failedLogin = true;
@@ -21,12 +25,12 @@
   <div class="heart-logo" />
   <div class="email">
     <input class="email input" bind:value={email} type="email" required />
-    <div class="email-logo" />
+    <div class="email-logo"><div /></div>
   </div>
 
   <div class="password">
     <input class="input" bind:value={password} type="password" required />
-    <div class="password-logo" />
+    <div class="password-logo"><div /></div>
   </div>
 
   {#if failedLogin}
@@ -39,14 +43,14 @@
 
 <style>
   .container {
-    width: 400px;
+    width: 420px;
     padding: 20px 24px;
     font-size: 14px;
 
     display: grid;
     grid-template-columns: min-content max-content 1fr;
     grid-template-rows: 40px 40px 40px;
-    row-gap: 10px;
+    row-gap: var(--spacing);
     grid-template-areas:
       "logo email email"
       "logo pass pass"
@@ -54,7 +58,7 @@
   }
 
   .heart-logo {
-    height: 120px;
+    height: calc(var(--height)*2);
     margin-right: 20px;
     aspect-ratio: 1;
     align-self: center;
@@ -68,19 +72,19 @@
 
   @media only screen and (max-width: 480px) {
     .container {
-      width: 280px;
+      width: 300px;
       max-width: 95vw;
       grid-template-columns: max-content 1fr;
-    grid-template-rows: min-content 40px 40px 40px;
-      grid-template-areas: 
-      "logo logo"
-      "email email"
-      "pass pass"
-      "login error";
+      grid-template-rows: min-content 40px 40px 40px;
+      grid-template-areas:
+        "logo logo"
+        "email email"
+        "pass pass"
+        "login error";
     }
     .heart-logo {
+      margin-right: 0;
       justify-self: center;
-      margin-right: 0px;
     }
   }
 
@@ -95,24 +99,29 @@
   .email input,
   .password input {
     width: 100%;
-    padding-left: 44px;
+    padding-left: var(--height);
   }
   .email-logo,
   .password-logo {
     pointer-events: none;
     user-select: none;
     position: absolute;
-    left: 18px;
-    top: 10px;
-    width: 20px;
-    height: 20px;
+    left: 0;
+    top: 0;
+    height: var(--height);
+    padding: 12px 18px;
   }
-  .email-logo {
+  .email-logo > div {
+    height: 100%;
+    aspect-ratio: 1;
     -webkit-mask: url("/images/email.svg") no-repeat center / contain;
     mask: url("/images/email.svg") no-repeat center / contain;
     background-color: var(--accent-color);
   }
-  .password-logo {
+
+  .password-logo > div {
+    height: 100%;
+    aspect-ratio: 1;
     -webkit-mask: url("/images/password.svg") no-repeat center / contain;
     mask: url("/images/password.svg") no-repeat center / contain;
     background-color: var(--accent-color);
