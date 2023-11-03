@@ -26,7 +26,7 @@
 
   /* other */
   --height: 50px;
-  --radius: 25px; 
+  --radius: 25px;
   --spacing: 10px;
   --transition: all 150ms ease-in-out;
 }
@@ -109,6 +109,39 @@ body {
   padding: 20px;
   transition: var(--transition);
   box-shadow: var(--dropShadow);
+}
+
+input[type="range"].range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px;
+  height: var(--height);
+  background-color: transparent;
+
+  &:focus {
+    outline-color: var(--highlight-color);
+  }
+}
+
+input[type="range"].range::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: var(--height);
+  border-radius: var(--radius);
+  box-shadow: var(--dropShadow);
+}
+
+input[type="range"].range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 100%;
+  aspect-ratio: 1;
+
+  position: relative;
+  cursor: pointer;
+
+  border-radius: var(--radius);
+  background-color: var(--accent-color);
 }
 
 /* 
