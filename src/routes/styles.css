@@ -30,11 +30,11 @@ input.range => range input
   --line-height: 16px;
 
   /* other */
-  --height: 50px;
-  --radius: 25px;
+  --height: 60px;
+  --radius: 30px;
   --spacing: 10px;
   --transition: all 150ms ease-in-out;
-  --border-size: 3px;
+  --border-size: 4px;
 }
 
 @font-face {
@@ -50,6 +50,7 @@ input.range => range input
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
+  -webkit-tap-highlight-color: transparent;
 }
 html,
 body {

@@ -11,7 +11,7 @@
 
   export let data;
 
-  let pagetree = ["/", "/energy", "/warmth", '/success'];
+  let pagetree = ["/", "/energy", "/warmth", "/success"];
   $: pageIndex = pagetree.indexOf($page.url.pathname);
 
   function handleNext() {
@@ -33,7 +33,6 @@
 
   onMount(() => {
     //todo: auto redirect if it has been a while
-
 
     screen.orientation.onchange = handleOrientation;
     handleOrientation();
@@ -105,23 +104,36 @@
       </div>
     {/key}
     {#if $authStore.currentUser}
-      <div in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}>
-          {#if pageIndex < pagetree.length-1}
-            <button class="next-btn button" on:click={handleNext}>
-              <div class="next-logo" />
-            </button>
-          {/if}
-
-          {#if pageIndex > 0}
-            <button class="back-btn button" on:click={handleBack}>
-              <div class="back-logo" />
-            </button>
-          {/if}
-
-        <button class="logout-btn button" on:click={handleLogout}>
-          <div class="logout-logo" />
+      {#if pageIndex < pagetree.length - 1}
+        <button
+          in:fade={{ duration: 300 }}
+          out:fade={{ duration: 300 }}
+          class="next-btn button"
+          on:click={handleNext}
+        >
+          <div class="next-logo" />
         </button>
-      </div>
+      {/if}
+
+      {#if pageIndex > 0}
+        <button
+          in:fade={{ duration: 300 }}
+          out:fade={{ duration: 300 }}
+          class="back-btn button"
+          on:click={handleBack}
+        >
+          <div class="back-logo" />
+        </button>
+      {/if}
+
+      <button
+        in:fade={{ duration: 300 }}
+        out:fade={{ duration: 300 }}
+        class="logout-btn button"
+        on:click={handleLogout}
+      >
+        <div class="logout-logo" />
+      </button>
     {/if}
   </div>
 </div>
@@ -153,6 +165,8 @@
     bottom: 0;
     right: 0;
     margin: 40px;
+    transform-origin: bottom right;
+    transform: scale(1.8);
   }
   .next-logo {
     height: 100%;

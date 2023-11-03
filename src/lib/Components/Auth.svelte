@@ -113,7 +113,7 @@
     left: 0;
     top: 0;
     height: var(--height);
-    padding: 12px 18px;
+    padding: calc(var(--height)/4) calc(var(--height)/2.5);
   }
   .email-logo > div {
     height: 100%;
@@ -134,7 +134,6 @@
   .error {
     grid-area: error;
     color: red;
-    font-size: 12px;
     align-self: center;
     border-radius: 8px;
     padding: 5px 10px;

@@ -11,9 +11,9 @@
 </script>
 
 <form on:submit={handleSubmit} class="grid-container center">
-    <img class="energy-level" src="/images/energy/energy{value}.svg" alt="" />
-    <input class="range" type="range" min="1" max="5" bind:value />
-    <input type="submit" style="display: none" />
+  <img class="energy-level" src="/images/energy/energy{value}.svg" alt="" />
+  <input class="range" type="range" min="1" max="5" bind:value />
+  <input type="submit" style="display: none" />
 </form>
 
 <style>
