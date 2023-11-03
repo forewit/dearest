@@ -29,6 +29,7 @@
   --radius: 25px;
   --spacing: 10px;
   --transition: all 150ms ease-in-out;
+  --border-size: 3px;
 }
 
 @font-face {
@@ -68,13 +69,14 @@ body {
   cursor: pointer;
   user-select: none;
 
-  border: 3px solid transparent;
+  border: var(--border-size) solid transparent;
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--dropShadow);
   transition: var(--transition);
 }
-.button:hover {
+.button:hover,
+.button:focus {
   box-shadow: none;
   border-color: var(--highlight-color);
 }
@@ -90,9 +92,9 @@ body {
 
   height: var(--height);
   padding: 8px;
-  border-radius: var(--radius);
 
-  border: 3px solid transparent;
+  border-radius: var(--radius);
+  border: var(--border-size) solid transparent;
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--insetShadow);
@@ -114,21 +116,27 @@ body {
 input[type="range"].range {
   -webkit-appearance: none;
   appearance: none;
+
   width: 200px;
   height: var(--height);
   background-color: transparent;
-
-  &:focus {
-    outline-color: var(--highlight-color);
-  }
+  outline: none;
 }
 
 input[type="range"].range::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   appearance: none;
   height: var(--height);
-  border-radius: var(--radius);
   box-shadow: var(--dropShadow);
+
+  border-radius: var(--radius);
+  border: var(--border-size) solid transparent;
+  transition: var(--transition);
+
+}
+input[type="range"].range:focus-visible::-webkit-slider-runnable-track {
+  border-color: var(--highlight-color);
+  box-shadow: none;
 }
 
 input[type="range"].range::-webkit-slider-thumb {

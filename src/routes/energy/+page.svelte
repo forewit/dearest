@@ -21,5 +21,7 @@
     height: 150px;
     align-self: center;
     justify-self: center;
+    user-select: none;
+    pointer-events: none;
   }
 </style>
