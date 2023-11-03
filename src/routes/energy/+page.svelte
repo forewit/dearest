@@ -17,6 +17,9 @@
 </form>
 
 <style>
+  input[type="range"] {
+    width: 250px;
+  }
   input[type="range"]::-webkit-slider-thumb {
     -webkit-mask: url("/images/energy.svg") no-repeat center / contain;
     mask: url("/images/energy.svg") no-repeat center / contain;
@@ -24,7 +27,7 @@
   .grid-container {
     display: grid;
     grid-auto-flow: row;
-    gap: 40px;
+    gap: 70px;
   }
   .energy-level {
     height: 150px;

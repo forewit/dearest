@@ -162,7 +162,7 @@
 
   .next-btn {
     position: absolute;
-    top: 50%;
+    bottom: 30px;
     right: 30px;
   }
   .next-logo {
@@ -175,7 +175,7 @@
 
   .back-btn {
     position: absolute;
-    top: 50%;
+    bottom: 30px;
     left: 30px;
   }
   .back-logo {

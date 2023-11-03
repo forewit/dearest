@@ -123,7 +123,6 @@ input[type="range"].range {
   -webkit-appearance: none;
   appearance: none;
 
-  width: 200px;
   height: var(--height);
   background-color: transparent;
   outline: none;
@@ -154,6 +153,8 @@ input[type="range"].range::-webkit-slider-thumb {
   cursor: pointer;
   bottom: calc(var(--height) / 3 + var(--border-size));
   background-color: var(--accent-color);
+
+  transform: scale(1.5);
 }
 
 /* 
