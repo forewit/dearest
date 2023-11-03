@@ -132,13 +132,13 @@ input[type="range"].range {
 input[type="range"].range::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   appearance: none;
-  height: var(--height);
+
+  height: calc(var(--height) / 3);
   box-shadow: var(--dropShadow);
 
   border-radius: var(--radius);
   border: var(--border-size) solid transparent;
   transition: var(--transition);
-
 }
 input[type="range"].range:focus-visible::-webkit-slider-runnable-track {
   border-color: var(--highlight-color);
@@ -148,13 +148,11 @@ input[type="range"].range:focus-visible::-webkit-slider-runnable-track {
 input[type="range"].range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  height: 100%;
+  height: var(--height);
   aspect-ratio: 1;
-
   position: relative;
   cursor: pointer;
-
-  border-radius: var(--radius);
+  bottom: calc(var(--height) / 3 + var(--border-size));
   background-color: var(--accent-color);
 }
 
