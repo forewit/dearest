@@ -76,7 +76,7 @@
 
   @media only screen and (max-width: 480px) {
     .container {
-      width: 300px;
+      width: 350px;
       max-width: 95vw;
       grid-template-columns: max-content 1fr;
       grid-template-rows: min-content var(--height) var(--height) var(--height);

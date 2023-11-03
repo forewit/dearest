@@ -162,11 +162,8 @@
 
   .next-btn {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 40px;
-    transform-origin: bottom right;
-    transform: scale(1.8);
+    top: 50%;
+    right: 30px;
   }
   .next-logo {
     height: 100%;
@@ -178,9 +175,8 @@
 
   .back-btn {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 40px;
+    top: 50%;
+    left: 30px;
   }
   .back-logo {
     height: 100%;
@@ -192,9 +188,8 @@
 
   .logout-btn {
     position: absolute;
-    top: 0;
-    left: 0;
-    margin: 40px;
+    top: 30px;
+    left: 30px;
   }
   .logout-logo {
     height: 100%;

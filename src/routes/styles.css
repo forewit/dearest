@@ -82,7 +82,7 @@ body {
   transition: var(--transition);
 }
 .button:hover,
-.button:focus {
+.button:focus-visible {
   box-shadow: none;
   border-color: var(--highlight-color);
 }
