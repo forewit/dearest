@@ -1,3 +1,8 @@
+/* Classes:
+.input => text input
+input.range => range input
+.button => buttons
+*/
 :root {
   /* colors generated from:  https://neumorphism.io/ */
   --background-color: #c5ebec;

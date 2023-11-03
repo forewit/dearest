@@ -35,7 +35,7 @@
     class="center"
   >
   <a href="/energy">
-    <h2>Energy</h2>
+    <h2>Start</h2>
   </a>
   </div>
 {/if}

@@ -6,8 +6,20 @@
 
   import "./styles.css";
   import { fade } from "svelte/transition";
+  import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
 
   export let data;
+
+  let pagetree = ["/", "/energy", "/warmth", '/success'];
+  $: pageIndex = pagetree.indexOf($page.url.pathname);
+
+  function handleNext() {
+    setTimeout(() => goto(pagetree[pageIndex + 1]), 0);
+  }
+  function handleBack() {
+    setTimeout(() => goto(pagetree[pageIndex - 1]), 0);
+  }
 
   let notchLeft = 0,
     notchRight = 0,
@@ -20,6 +32,9 @@
   }
 
   onMount(() => {
+    //todo: auto redirect if it has been a while
+
+
     screen.orientation.onchange = handleOrientation;
     handleOrientation();
 
@@ -65,6 +80,11 @@
       });
     });
   });
+
+  function handleLogout() {
+    authHandlers.logout();
+    setTimeout(() => goto("/"), 0);
+  }
 </script>
 
 <svelte:head>
@@ -85,15 +105,23 @@
       </div>
     {/key}
     {#if $authStore.currentUser}
-      <a
-        href="/"
-        in:fade={{ duration: 300, delay: 300 }}
-        out:fade={{ duration: 300 }}
-      >
-        <button class="logout-btn button" on:click={authHandlers.logout}>
+      <div in:fade={{ duration: 300 }} out:fade={{ duration: 300 }}>
+          {#if pageIndex < pagetree.length-1}
+            <button class="next-btn button" on:click={handleNext}>
+              <div class="next-logo" />
+            </button>
+          {/if}
+
+          {#if pageIndex > 0}
+            <button class="back-btn button" on:click={handleBack}>
+              <div class="back-logo" />
+            </button>
+          {/if}
+
+        <button class="logout-btn button" on:click={handleLogout}>
           <div class="logout-logo" />
         </button>
-      </a>
+      </div>
     {/if}
   </div>
 </div>
@@ -120,11 +148,39 @@
     height: 100%;
   }
 
+  .next-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 40px;
+  }
+  .next-logo {
+    height: 100%;
+    aspect-ratio: 1;
+    -webkit-mask: url("/images/arrow-right.svg") no-repeat center / contain;
+    mask: url("/images/arrow-right.svg") no-repeat center / contain;
+    background-color: var(--accent-color);
+  }
+
+  .back-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 40px;
+  }
+  .back-logo {
+    height: 100%;
+    aspect-ratio: 1;
+    -webkit-mask: url("/images/arrow-left.svg") no-repeat center / contain;
+    mask: url("/images/arrow-left.svg") no-repeat center / contain;
+    background-color: var(--accent-color);
+  }
+
   .logout-btn {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 20px;
+    margin: 40px;
   }
   .logout-logo {
     height: 100%;

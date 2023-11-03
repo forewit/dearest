@@ -13,7 +13,11 @@
     try {
       failedLogin = false;
       await authHandlers.login(email, password);
-      if (redirect) goto(redirect);
+      if (redirect) {
+        setTimeout(() => {
+          goto(redirect);
+        }, 0);
+      }
     } catch (err) {
       console.log("Login failed!");
       failedLogin = true;
@@ -58,7 +62,7 @@
   }
 
   .heart-logo {
-    height: calc(var(--height)*2);
+    height: calc(var(--height) * 2);
     aspect-ratio: 1;
     margin-right: var(--spacing);
     align-self: center;
