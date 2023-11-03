@@ -1,8 +1,12 @@
 <script lang="ts">
+  import Selector from "$lib/Components/Selector.svelte";
+
 
 </script>
 
-<h2 class="center">warmth</h2>
+<div class="center">
+    <h1>🔥</h1>
+</div>
 
 <style>
 

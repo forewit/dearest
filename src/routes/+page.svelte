@@ -3,9 +3,6 @@
   import { fade } from "svelte/transition";
   import { authStore } from "../stores/authStore";
   import Spinner from "$lib/Components/Spinner.svelte";
-
-
-
 </script>
 
 <svelte:head>
@@ -26,7 +23,7 @@
     out:fade={{ duration: 300 }}
     class="auth-container center"
   >
-    <Auth redirect="/energy"/>
+    <Auth redirect="/energy" />
   </div>
 {:else}
   <div
@@ -34,9 +31,7 @@
     out:fade={{ duration: 300 }}
     class="center"
   >
-  <a href="/energy">
-    <h2>Start</h2>
-  </a>
+    <h1>💖</h1>
   </div>
 {/if}
 

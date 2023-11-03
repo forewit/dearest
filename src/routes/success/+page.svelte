@@ -3,8 +3,7 @@
 </script>
 
 <div class="center">
-    <h2>Success!</h2>
-    <a href="/">home</a>
+    <h1>✅</h1>
 </div>
 
 
